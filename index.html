@@ -126,12 +126,16 @@
 
     <div class="iletisim-kutusu">
         <h2>Hemen Bilgi Alın & Rezervasyon Yapın</h2>
-        <p>Oda fiyatları ve müsaitlik durumu için bizimle doğrudan WhatsApp üzerinden iletişime geçebilirsiniz.</p>
+      
         <!-- Telefon numaranızı uluslararası formatta (90...) yazdım -->
 
         <a href="tel:+902328127788" style="display: inline-block; background-color: #2b78e4; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; margin-top: 15px;">
     📞 Hemen Ara & Rezervasyon Yap
 </a>
+<a href="https://www.instagram.com/lithosotel?igsh=MTVweWswZXFuazk3eA==" target="_blank" style="display: inline-block; background-color: #E1306C; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; margin-top: 15px; margin-left: 10px;">
+    📸 Instagram'da Biz
+</a>
+
         <p style="margin-top: 25px; font-weight: bold;">Telefon: +90 232 812 77 88</p>
         <p>Adres: İsmetpaşa Mah. 200 Sok. No:26, Eski Foça / İzmir</p>
         
@@ -144,6 +148,35 @@
 
 <footer>
     &copy; 2026 Lithos Otel Foça - Tüm Hakları Saklıdır.
+<section style="padding: 40px 20px; background-color: #f9f9f9; max-width: 800px; margin: 40px auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h2 style="text-align: center; color: #333; margin-bottom: 30px;">💬 Misafir Yorumları</h2>
+    
+    <form id="commentForm" style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 40px;">
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="guestName" placeholder="Adınız Soyadınız *" required style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+        </div>
+        <textarea id="guestComment" placeholder="Yorumunuzu buraya yazın... *" required style="padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; min-height: 100px; resize: vertical;"></textarea>
+        <button type="submit" style="background-color: #333; color: white; padding: 12px; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s;">Yorumu Gönder</button>
+    </form>
+
+    <div id="commentsList" style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="background: white; padding: 15px; border-radius: 6px; box-shadow: 0 1px 5px rgba(0,0,0,0.05);">
+            <strong style="color: #2b78e4; display: block; margin-bottom: 5px;">Ahmet Yılmaz</strong>
+            <p style="margin: 0; color: #555; line-height: 1.5;">Foça'nın ruhunu yansıtan harika bir taş otel. Temizlik ve ilgi çok başarılıydı, tekrar geleceğiz.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    var name = document.getElementById('guestName').value.trim();
+    var comment = document.getElementById('guestComment').value.trim();
+    
+    if(name === "" || comment === "") {
+        alert("Lütfen adınızı, soyadınızı ve yorumunuzu eksiksiz girin.");
+
 </footer>
 </body>
 </html>
