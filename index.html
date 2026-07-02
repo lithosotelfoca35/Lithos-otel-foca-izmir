@@ -2,63 +2,87 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Lithos Butik Otel | Eski Foça</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lithos Otel | Eski Foça</title>
     <style>
-        body { margin: 0; background-color: #3e4a3d; color: #4a4a4a; font-family: sans-serif; display: flex; justify-content: center; min-height: 100vh; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f9f6f0; color: #4a4a4a; }
+        .hero { text-align: center; padding: 40px 20px; background-color: #3e4a3d; }
+        .hero img { max-width: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+        .ana-yerlesim { max-width: 1200px; margin: 50px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+        @media (max-width: 900px) { .ana-yerlesim { grid-template-columns: 1fr; } }
+        .sag-kart { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e6e0d4; margin-bottom: 20px; }
+        .hizli-btn { padding: 12px 25px; background-color: #2b78e4; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .insta-btn { padding: 12px 25px; background-color: #E1306C; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
         
-        /* YAN YAZILAR */
-        .yan-yazi { position: fixed; top: 50%; transform: translateY(-50%) rotate(-90deg); color: rgba(255,255,255,0.2); font-size: 3rem; font-weight: bold; letter-spacing: 20px; pointer-events: none; z-index: 1; }
-        .sol { left: 40px; } .right { right: 40px; }
-
-        .container { background: #f9f6f0; width: 900px; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.5); z-index: 2; margin: 20px 0; }
-        .hero { text-align: center; margin-bottom: 40px; }
-        .hero img { width: 100%; max-width: 600px; border-radius: 15px; }
+        /* ODA FOTOĞRAFLARI İÇİN İSTEDİĞİN O GÜZEL DÜZEN */
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 40px; }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
+        .card img:hover { transform: scale(1.03); }
         
-        .ana-kutu { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-        h2 { border-bottom: 2px solid #3e4a3d; padding-bottom: 5px; margin-top: 30px; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; cursor: pointer; }
-        
-        .sag-panel { background: #fff; padding: 20px; border-radius: 10px; border: 1px solid #ddd; }
-        .harita { margin-top: 20px; width: 100%; height: 200px; }
-        input, textarea { width: 100%; padding: 10px; margin-bottom: 10px; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #3e4a3d; color: white; border: none; cursor: pointer; }
+        footer { text-align: center; padding: 40px; background: #3e4a3d; color: #f9f6f0; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <div class="yan-yazi sol">LITHOS BUTİK OTEL</div>
-    <div class="yan-yazi right">LITHOS BUTİK OTEL</div>
+<section class="hero">
+    <img src="binaresmi.JPG" alt="Lithos Otel">
+    <div class="hero-btns">
+        <a href="tel:+902328127788" class="hizli-btn">📞 Hemen Ara</a>
+        <a href="https://www.instagram.com/lithosotel?igsh=MTVweWswZXFuazk3eA==" target="_blank" class="insta-btn">📸 Instagram</a>
+    </div>
+</section>
 
-    <div class="container">
-        <div class="hero"><img src="binaresmi.JPG" alt="Otel"></div>
-        
-        <div class="ana-kutu">
-            <div class="sol-taraf">
-                <h2>Ahşap Odalar</h2>
-                <div class="grid">
-                    <div class="card"><img src="ahsap1.jpg" onclick="window.open(this.src)"></div>
-                    <div class="card"><img src="ahsap2.jpg" onclick="window.open(this.src)"></div>
-                </div>
-                <h2>Taş Odalar</h2>
-                <div class="grid">
-                    <div class="card"><img src="tas1.jpg" onclick="window.open(this.src)"></div>
-                    <div class="card"><img src="tas2.jpg" onclick="window.open(this.src)"></div>
-                </div>
-            </div>
-            
-            <div class="sag-panel">
-                <h3>Konum</h3>
-                <iframe class="harita" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.5!2d26.75!3d38.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM5JzM2LjAiTiAyNsKwNDUnMDAuMCJF!5e0!3m2!1str!2str!4v1!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
-                
-                <h3>Görüş & Öneri</h3>
-                <form id="f" action="https://formspree.io/f/mvzjwden" method="POST">
-                    <input type="text" name="ad" placeholder="Adınız" required>
-                    <textarea name="mesaj" placeholder="Mesajınız" required></textarea>
-                    <button type="submit">Gönder</button>
-                </form>
-            </div>
+<div class="ana-yerlesim">
+    <div class="sol-icerik">
+        <h2>Ahşap Odalar</h2>
+        <div class="grid">
+            <div class="card"><img src="ahsap1.jpg" onclick="window.open(this.src)"></div>
+            <div class="card"><img src="ahsap2.jpg" onclick="window.open(this.src)"></div>
+            <div class="card"><img src="ahsap3.jpg" onclick="window.open(this.src)"></div>
+            <div class="card"><img src="ahsap4.jpg" onclick="window.open(this.src)"></div>
+        </div>
+        <h2>Taş Odalar</h2>
+        <div class="grid">
+            <div class="card"><img src="tas1.jpg" onclick="window.open(this.src)"></div>
+            <div class="card"><img src="tas2.jpg" onclick="window.open(this.src)"></div>
+            <div class="card"><img src="tas3.jpg" onclick="window.open(this.src)"></div>
+            <div class="card"><img src="tas4.jpg" onclick="window.open(this.src)"></div>
         </div>
     </div>
+
+    <div class="sag-sutun">
+        <div class="sag-kart">
+            <h3>Görüş & Öneri</h3>
+            <form id="dilekFormu" action="https://formspree.io/f/mvzjwden" method="POST">
+                <input type="text" name="ad_soyad" placeholder="Adınız" required style="width:100%; padding:8px; margin-bottom:5px; box-sizing:border-box;">
+                <textarea name="mesaj" placeholder="Mesajınız..." rows="3" required style="width:100%; padding:8px; margin-bottom:10px; box-sizing:border-box;"></textarea>
+                <button type="submit" id="submitBtn" style="width:100%; padding:10px; background:#3e4a3d; color:white; border:none; border-radius:4px; cursor:pointer;">Gönder</button>
+            </form>
+            <p id="successMsg" style="display:none; color:green; text-align:center; font-weight:bold;">Mesajınız iletildi, teşekkürler!</p>
+        </div>
+        <div class="sag-kart">
+            <h3>Konum</h3>
+            <iframe src="https://maps.google.com/maps?q=Ismetpasa%20Mah.%20200%20Sok.%20No:26,%20Eski%20Foca&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="200" style="border:0;"></iframe>
+        </div>
+    </div>
+</div>
+
+<footer>©️ 2026 Lithos Otel Foça</footer>
+
+<script>
+    const form = document.getElementById('dilekFormu');
+    const msg = document.getElementById('successMsg');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const response = await fetch(form.action, { method: 'POST', body: data, headers: {'Accept': 'application/json'} });
+        if (response.ok) {
+            form.style.display = 'none';
+            msg.style.display = 'block';
+        }
+    });
+</script>
+
 </body>
 </html>
