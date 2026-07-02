@@ -4,48 +4,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lithos Otel | Eski Foça</title>
     <style>
-        /* ARKA PLAN VE YAN YAZILAR */
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            margin: 0; 
-            background-color: #3e4a3d; /* Yeşil arka plan */
-            color: #4a4a4a; 
-            position: relative;
-        }
+         /* ARKA PLAN VE YAN YAZILAR */
+    body { 
+        font-family: 'Segoe UI', sans-serif; 
+        margin: 0; 
+        background-color: #3e4a3d; 
+        color: #4a4a4a; 
+        position: relative;
+    }
 
-        /* YAN YAZILAR İÇİN CSS */
-        .yan-yazi {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%) rotate(-90deg);
-            color: rgba(255,255,255,0.2);
-            font-size: 3rem;
-            font-weight: bold;
-            letter-spacing: 10px;
-            pointer-events: none; /* Yazıya tıklanmasın */
-            z-index: -1;
-        }
-        .sol { left: 50px; }
-        .right { right: 50px; }
+    /* YAN YAZILARIN DAHA BELİRGİN HALİ */
+    .yan-yazi {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        color: rgba(255, 255, 255, 0.6); 
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 15px;
+        pointer-events: none;
+        z-index: -1;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    .sol { left: 40px; }
+    .right { right: 40px; }
 
-        .container { background-color: #f9f6f0; max-width: 1000px; margin: 0 auto; min-height: 100vh; padding: 20px; }
-        
-        .hero { text-align: center; padding: 40px 20px; }
-        .hero img { max-width: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
-        
-        .ana-yerlesim { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 40px; }
-        @media (max-width: 900px) { .ana-yerlesim { grid-template-columns: 1fr; } }
-        
-        .sag-kart { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e6e0d4; margin-bottom: 20px; }
-        .hizli-btn { padding: 12px 25px; background-color: #2b78e4; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
-        .insta-btn { padding: 12px 25px; background-color: #E1306C; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
-        
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 40px; }
-        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
-        .card img:hover { transform: scale(1.03); }
-        
-        footer { text-align: center; padding: 40px; }
+    .container { background-color: #f9f6f0; max-width: 1000px; margin: 0 auto; min-height: 100vh; padding: 20px; }
+    
+    .hero { text-align: center; padding: 40px 20px; }
+    .hero img { max-width: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    .hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+    
+    .ana-yerlesim { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 40px; }
+    @media (max-width: 900px) { .ana-yerlesim { grid-template-columns: 1fr; } }
+    
+    .sag-kart { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e6e0d4; margin-bottom: 20px; }
+    .hizli-btn { padding: 12px 25px; background-color: #2b78e4; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    .insta-btn { padding: 12px 25px; background-color: #E1306C; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 40px; }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
+    .card img:hover { transform: scale(1.03); }
+    
+    footer { text-align: center; padding: 40px; }
+</style>
     </style>
 </head>
 <body>
