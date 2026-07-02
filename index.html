@@ -2,8 +2,9 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lithos Otel ile Eski Foça'nın tarihi dokusunda, huzurlu ve konforlu bir taş otel deneyimi yaşayın. En uygun fiyatlarla doğrudan rezervasyon yapın.">
-<title>Lithos Otel | Eski Foça Butik Otel & Rezervasyon</title>
+    <title>Lithos Otel | Eski Foça Butik Otel & Rezervasyon</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,7 +14,7 @@
             color: #4a4a4a;
         }
         header {
-            background-color: #3e4a3d; /* Ege zeytin yeşili tonu */
+            background-color: #3e4a3d;
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -28,14 +29,34 @@
             font-style: italic;
             opacity: 0.9;
         }
-        .container {
-            max-width: 900px;
+        
+        /* Sağ ve Sol Boşlukları Dolduran Yeni Düzen */
+        .ana-yerlesim {
+            max-width: 1200px;
             margin: 30px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Sol geniş, Sağ sütun alanı */
+            gap: 30px;
         }
+        
+        @media (max-width: 900px) {
+            .ana-yerlesim { grid-template-columns: 1fr; } /* Mobilde alt alta gelsin */
+        }
+
+        .sol-icerik {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        
+        .sag-sutun {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
         .ozellikler {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -52,36 +73,54 @@
             border-radius: 4px;
         }
         .kart h3 { margin-top: 0; color: #3e4a3d; }
-        .iletisim-kutusu {
-            text-align: center;
-            background: #f0f4f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 40px;
+        
+        .sag-kart {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #e6e0d4;
         }
-        .whatsapp-btn {
-            display: inline-block;
-            background-color: #25D366;
+
+        .hizli-ara-btn {
+            display: block;
+            background-color: #2b78e4;
             color: white;
-            text-decoration: none;
-            padding: 15px 30px;
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
             font-weight: bold;
-            border-radius: 50px;
-            font-size: 1.2em;
-            box-shadow: 0 4px 10px rgba(37,211,102,0.3);
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(43,120,228,0.2);
             transition: 0.3s;
-            margin-top: 15px;
+            margin-bottom: 10px;
         }
-        .whatsapp-btn:hover {
+        .hizli-insta-btn {
+            display: block;
+            background-color: #E1306C;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(225,48,108,0.2);
+            transition: 0.3s;
+        }
+        .hizli-ara-btn:hover, .hizli-insta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(37,211,102,0.4);
         }
+
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             font-size: 0.9em;
             color: #8c8c8c;
-            margin-top: 40px;
+            background: #3e4a3d;
+            color: #f9f6f0;
+            margin-top: 50px;
         }
         .harita {
             margin-top: 20px;
@@ -93,166 +132,108 @@
 <body>
 
 <header>
-<div style="text-align: center; margin-top: 20px; padding: 0 20px;">
-    <img src="binaresmi.jpg" alt="Lithos Otel Bina" style="width:100%; max-width:800px; height:auto; border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" onerror="this.src='binaresmi.JPG'">
-</div>
-
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="binaresmi.jpg" alt="Lithos Otel Bina" style="width:100%; max-width:800px; height:auto; border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onerror="this.src='binaresmi.JPG'">
+    </div>
     <h1>LİTHOS OTEL FOÇA</h1>
     <p>Foça'nın kalbinde, gürültüden uzak bir huzur vahası.</p>
 </header>
 
-<div class="container">
-    <h2>Hakkımızda</h2>
-    <p>Lithos Otel, Eski Foça'nın tam merkezinde gürültüden uzak konumu, tarihi taş mimarisi, meşhur ev yapımı pişili kahvaltısı ve aile işletmesi sıcaklığıyla misafirlerine ev konforunda huzurlu bir Ege tatili sunar. Denize, sahile ve limana yürüyerek sadece 1 dakika mesafedeyiz.</p>
+<div class="ana-yerlesim">
+    
+    <div class="sol-icerik">
+        <h2>Hakkımızda</h2>
+        <p>Lithos Otel, Eski Foça'nın tam merkezinde gürültüden uzak konumu, tarihi taş mimarisi, meşhur ev yapımı pişili kahvaltısı and aile işletmesi sıcaklığıyla misafirlerine ev konforunda huzurlu bir Ege tatili sunar. Denize, sahile and limana yürüyerek sadece 1 dakika mesafedeyiz.</p>
 
-    <div class="ozellikler">
-        <div class="kart">
-            <h3>Tarihi Taş Mimari</h3>
-            <p>Eski Foça'nın ruhunu yansıtan, yüksek tavanlı, ahşap ve taşın harmanlandığı otantik odalarımızla hizmetinizdeyiz.</p>
+        <div class="ozellikler">
+            <div class="kart">
+                <h3>Tarihi Taş Mimari</h3>
+                <p>Eski Foça'nın ruhunu yansıtan, yüksek tavanlı, ahşap and taşın harmanlandığı otantik odalarımızla hizmetinizdeyiz.</p>
+            </div>
+            <div class="kart">
+                <h3>Ev Yapımı Kahvaltı</h3>
+                <p>Bahçemizde sunduğumuz, tamamen yerel ürünler, ev yapımı reçeller and sıcacık pişilerle güne harika başlayın.</p>
+            </div>
+            <div class="kart">
+                <h3>Mükemmel Konum</h3>
+                <p>Merkezin göbeğinde, plajlara and restoranlara birkaç adım mesafede ama akşam gürültüsünden tamamen izole bir konum.</p>
+            </div>
+            <div class="kart">
+                <h3>Aile Sıcaklığı</h3>
+                <p>Kusursuz temizlik and kendinizi evinizde hissettirecek güler yüzlü bir misafirperverlik anlayışı.</p>
+            </div>
         </div>
-        <div class="kart">
-            <h3>Ev Yapımı Kahvaltı</h3>
-            <p>Bahçemizde sunduğumuz, tamamen yerel ürünler, ev yapımı reçeller ve sıcacık pişilerle güne harika başlayın.</p>
-        </div>
-        <div class="kart">
-            <h3>Mükemmel Konum</h3>
-            <p>Merkezin göbeğinde, plajlara ve restoranlara birkaç adım mesafede ama akşam gürültüsünden tamamen izole bir konum.</p>
-        </div>
-        <div class="kart">
-            <h3>Aile Sıcaklığı</h3>
-            <p>Kusursuz temizlik ve kendinizi evinizde hissettirecek güler yüzlü bir misafirperverlik anlayışı.</p>
+
+        <div style="margin-top: 40px;">
+            <h2>Konumumuz</h2>
+            <p>Adres: İsmetpaşa Mah. 200 Sok. No:26, Eski Foça / İzmir</p>
+            <div class="harita">
+                <iframe src="https://maps.google.com/maps?q=Ismetpasa%20Mah.%20200%20Sok.%20No:26,%20Eski%20Foca&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
     </div>
-
-    <div class="iletisim-kutusu">
-        <h2>Hemen Bilgi Alın & Rezervasyon Yapın</h2>
-      
-        <!-- Telefon numaranızı uluslararası formatta (90...) yazdım -->
-
-        <a href="tel:+902328127788" style="display: inline-block; background-color: #2b78e4; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; margin-top: 15px;">
-    📞 Hemen Ara & Rezervasyon Yap
-</a>
-<a href="https://www.instagram.com/lithosotel?igsh=MTVweWswZXFuazk3eA==" target="_blank" style="display: inline-block; background-color: #E1306C; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; margin-top: 15px; margin-left: 10px;">
-    📸 Instagram'da Biz
-</a>
-
-        <p style="margin-top: 25px; font-weight: bold;">Telefon: +90 232 812 77 88</p>
-        <p>Adres: İsmetpaşa Mah. 200 Sok. No:26, Eski Foça / İzmir</p>
+    
+    <div class="sag-sutun">
         
-        <!-- Canlı Google Haritası -->
-        <div class="harita">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.840746654876!2d26.7533816!3d38.6755496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb93fbe0a3b8e7%3A0xe54e9517e40fa3cf!2sLithos%20Otel%20Fo%C3%A7a!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="sag-kart" style="text-align: center;">
+            <h3 style="color: #3e4a3d; margin-top: 0;">Hızlı Rezervasyon</h3>
+            <p style="font-size: 14px; color: #666;">Doğrudan en uygun fiyatlarla rezervasyon yapmak için bizimle iletişime geçin.</p>
+            <p style="font-weight: bold; font-size: 16px; margin: 15px 0;">📞 +90 232 812 77 88</p>
+            
+            <a href="tel:+902328127788" class="hizli-ara-btn">Hemen Ara</a>
+            <a href="https://www.instagram.com/lithosotel?igsh=MTVweWswZXFuazk3eA==" target="_blank" class="hizli-insta-btn">Instagram Profili</a>
         </div>
+        
+        <div class="sag-kart" style="background: #fdfbf7; border: 2px solid #3e4a3d;">
+            <h3 style="color: #3e4a3d; margin-top: 0; font-size: 18px; text-align: center;">Görüş & Öneri Kutusu</h3>
+            <p style="font-size: 12px; color: #666; line-height: 1.4; text-align: center; margin-bottom: 15px;">
+                Yazılan mesajlar şifreli bir hat üzerinden doğrudan otel yönetiminin e-posta adresine ulaşır. Üçüncü şahıslar göremez.
+            </p>
+            
+            <form id="dilekFormu" action="https://formspree.io/f/mvzjwden" method="POST">
+                <input type="text" name="ad_soyad" placeholder="Adınız Soyadınız *" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
+                <textarea name="mesaj" placeholder="Mesajınız... *" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px; resize: none;"></textarea>
+                <button type="submit" id="gonderButon" style="background: #3e4a3d; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; font-size: 14px; transition: 0.3s;">Görüşü Güvenli İlet</button>
+            </form>
+            
+            <div id="basariMesaji" style="display: none; color: #2e7d32; font-weight: bold; text-align: center; font-size: 14px; padding: 10px 0;">
+                ✓ Görüşünüz doğrudan otel yönetimine (E-posta) başarıyla iletilmiştir.
+            </div>
+        </div>
+        
     </div>
 </div>
-
 <footer>
     <p>©️ 2026 Lithos Otel Foça. Tüm Hakları Saklıdır.</p>
 </footer>
 
-<div class="gorus-kutusu" style="max-width: 500px; margin: 50px auto; padding: 30px; background: #fdfbf7; border: 2px solid #3e4a3d; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif;">
-    
-    <h3 style="color: #3e4a3d; margin-bottom: 10px; font-size: 22px; font-weight: bold;">Görüş, Öneri ve Şikayetleriniz</h3>
-    <p style="font-size: 13px; color: #666; margin-bottom: 25px; line-height: 1.5;">
-        Lithos Otel personeli ve yönetimi haricinde hiçbir üçüncü şahıs bu mesajları göreamaz. Görüşleriniz doğrudan yönetime güvenli olarak iletilmektedir.
-    </p>
-    
-    <form id="yerelDilekFormu">
-        <input type="text" id="gorusAdSoyad" placeholder="Adınız Soyadınız *" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 14px;">
-        <textarea id="gorusMesaj" placeholder="Mesajınız... *" rows="5" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 14px; resize: none;"></textarea>
-        <button type="submit" style="background: #3e4a3d; color: white; border: none; padding: 14px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px; transition: 0.3s; margin-bottom: 10px;">Görüşü Güvenli Olarak İlet</button>
-    </form>
-    
-    <div id="yerelBasari" style="display: none; color: #2e7d32; font-weight: bold; padding: 20px 0; font-size: 16px;">
-        ✓ Görüşünüz güvenli bir şekilde doğrudan otel yönetimine iletilmiştir.
-    </div>
-
-    <hr style="margin: 25px 0; border: 0; border-top: 1px dashed #3e4a3d; opacity: 0.3;">
-
-    <div id="yonetimGirisFormu" style="text-align: left; background: #f5f2eb; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
-        <h4 style="margin: 0 0 15px 0; color: #3e4a3d; font-size: 15px; text-align: center; font-weight: bold;">🔒 Yönetim Girişi</h4>
-        
-        <input type="text" id="panelKullanici" placeholder="Kullanıcı Adı" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
-        <input type="password" id="panelSifre" placeholder="Şifre" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 13px;">
-        
-        <button onclick="yonetimGirisYap()" style="background: #2e4d36; color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; font-size: 14px; transition: 0.3s;">Sadece Yönetim</button>
-    </div>
-
-    <div id="gizliYorumlarAlani" style="display: none; text-align: left; margin-top: 20px; max-height: 350px; overflow-y: auto; padding: 15px; background: #fff; border: 2px solid #2e4d36; border-radius: 10px;">
-        <h4 style="color: #2e4d36; margin-top: 0; border-bottom: 2px solid #2e4d36; padding-bottom: 5px; font-weight: bold;">Gelen Görüşler (Yönetici Özel)</h4>
-        <div id="yorumListesi" style="font-size: 13px; color: #333; line-height: 1.4;"></div>
-        <button onclick="verileriTemizle()" style="background: #d32f2f; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 11px; margin-top: 15px; font-weight: bold;">Tüm Mesajları Temizle/Sil</button>
-    </div>
-</div>
-
 <script>
-    const ADMIN_USER = "admin";
-    const ADMIN_PASS = "Lithos2026";
+    const form = document.getElementById('dilekFormu');
+    const basari = document.getElementById('basariMesaji');
+    const buton = document.getElementById('gonderButon');
 
-    const form = document.getElementById('yerelDilekFormu');
-    const basari = document.getElementById('yerelBasari');
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); 
+        buton.innerText = "Güvenli bağlantı kuruluyor...";
+        buton.disabled = true;
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const adSoyad = document.getElementById('gorusAdSoyad').value;
-        const mesaj = document.getElementById('gorusMesaj').value;
-        const tarih = new Date().toLocaleString('tr-TR');
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
 
-        let mevcutYorumlar = JSON.parse(localStorage.getItem('otelGorusleri')) || [];
-        mevcutYorumlar.push({ ad: adSoyad, msg: mesaj, date: tarih });
-        
-        localStorage.setItem('otelGorusleri', JSON.stringify(mevcutYorumlar));
-
-        form.style.display = 'none';
-        basari.style.display = 'block';
-        
-        document.getElementById('gorusAdSoyad').value = "";
-        document.getElementById('gorusMesaj').value = "";
-    });
-
-    function yonetimGirisYap() {
-        const girilenUser = document.getElementById('panelKullanici').value;
-        const girilenPass = document.getElementById('panelSifre').value;
-        
-        if (girilenUser === ADMIN_USER && girilenPass === ADMIN_PASS) {
-            const alan = document.getElementById('gizliYorumlarAlani');
-            const liste = document.getElementById('yorumListesi');
-            let mevcutYorumlar = JSON.parse(localStorage.getItem('otelGorusleri')) || [];
-            
-            liste.innerHTML = "";
-            
-            if (mevcutYorumlar.length === 0) {
-                liste.innerHTML = "<p style='color:#999; text-align:center;'>Henüz iletilmiş bir görüş bulunmuyor.</p>";
-            } else {
-                mevcutYorumlar.slice().reverse().forEach(function(item) {
-                    liste.innerHTML += `
-                        <div style="border-bottom: 1px solid #eee; padding: 10px 0; margin-bottom: 5px;">
-                            <span style="color:#666; font-size:11px; float:right;">${item.date}</span>
-                            <strong style="color:#2e4d36;">Gönderen:</strong> ${item.ad}<br>
-                            <strong style="color:#2e4d36;">Mesaj:</strong> ${item.msg}
-                        </div>
-                    `;
-                });
-            }
-            
-            alan.style.display = 'block';
-            document.getElementById('panelKullanici').value = "";
-            document.getElementById('panelSifre').value = "";
-            alert("Yönetici girişi başarılı.");
-            alan.scrollIntoView({ behavior: 'smooth' });
+        if (response.ok) {
+            form.style.display = 'none'; 
+            basari.style.display = 'block'; 
         } else {
-            alert("Hatalı Kullanıcı Adı veya Şifre!");
+            alert('Bir bağlantı hatası oluştu, lütfen tekrar deneyin.');
+            buton.innerText = "Görüşü Güvenli İlet";
+            buton.disabled = false;
         }
-    }
-
-    function verileriTemizle() {
-        if (confirm("Gelen tüm mesajları kalıcı olarak silmek istediğinize emin misiniz?")) {
-            localStorage.removeItem('otelGorusleri');
-            document.getElementById('gizliYorumlarAlani').style.display = 'none';
-            alert("Tüm veritabanı temizlendi.");
-        }
-    }
+    });
 </script>
+
 </body>
 </html>
