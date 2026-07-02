@@ -12,16 +12,39 @@
         .nav-links a { text-decoration: none; color: #555; font-weight: bold; transition: color 0.3s; }
         .nav-links a:hover { color: #8c7853; }
         
-        /* BÜYÜK DIŞ CEPHE FOTOĞRAFI */
-        .hero { background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('binaresmi.JPG') no-repeat center center/cover; height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 0 20px; }
-        .hero h1 { font-family: 'Georgia', serif; font-size: 3.5rem; margin: 0 0 15px 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
-        .hero p { font-size: 1.4rem; margin: 0 0 30px 0; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); }
+        /* KOMPLE VE TAM BOY GÖRÜNEN DIŞ CEPHE FOTOĞRAFI ALANI */
+        .hero { 
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('binaresmi.JPG') no-repeat center center; 
+            background-size: 100% 100%; /* Resmi tam sığdırmak için */
+            min-height: 85vh; /* Büyük ekranlarda yüksekliği korur */
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: #fff; 
+            text-align: center; 
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
         
-        /* SOSYAL MEDYA VE ÖNERİ BUTONLARI */
+        /* Telefonlarda resmin orijinal oranının bozulmaması için otomatik yükseklik ayarı */
+        @media (max-width: 768px) {
+            .hero {
+                background-size: cover;
+                min-height: auto;
+                padding: 80px 20px;
+            }
+        }
+
+        .hero h1 { font-family: 'Georgia', serif; font-size: 3rem; margin: 0 0 15px 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.85); max-width: 900px; }
+        .hero p { font-size: 1.3rem; margin: 0 0 30px 0; text-shadow: 1px 1px 6px rgba(0,0,0,0.85); max-width: 700px; }
+        
+        /* SOSYAL MEDYA VE ARAMA BUTONLARI */
         .btn-container { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn { padding: 12px 24px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
-        .btn-wp { background-color: #25D366; color: white; }
+        .btn { padding: 12px 24px; border-radius: 30px; font-weight: bold; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.4); }
+        .btn-call { background-color: #007bff; color: white; } 
         .btn-insta { background-color: #E1306C; color: white; }
         .btn-suggest { background-color: #8c7853; color: white; }
 
@@ -50,25 +73,24 @@
         </ul>
     </header>
 
+    <!-- FOTOĞRAFIN ÜZERİNE OTURAN GİRİŞ, TANITIM VE BUTONLAR -->
     <section class="hero">
         <h1>Taş Evin Sıcaklığı, Denizden Gelen Huzur Vahası</h1>
         <p>Eski Foça'nın merkezinde unutulmaz bir konaklama deneyimi</p>
+        
+        <!-- Otel Tanıtım Yazısı da Tam Buraya, Resmin Üzerine Alındı -->
+        <p style="max-width: 750px; font-size: 1.1rem; margin: 0 auto 35px auto; text-shadow: 1px 1px 6px rgba(0,0,0,0.85); line-height: 1.5; font-weight: normal;">
+            Lithos Otel, Eski Foça'nın tam merkezinde gürültüden uzak konumu, tarihi taş mimarisi, meşhur ev yapımı kahvaltısı ve aile işletmesi sıcaklığıyla misafirlerini ağırlamaktadır. Deniz, sahile ve limana yürüyerek sadece 1 dakika mesafedeyiz.
+        </p>
+
         <div class="btn-container">
-            <a href="https://wa.me/905330364402" target="_blank" class="btn btn-wp">💬 WhatsApp Rezervasyon</a>
+            <a href="tel:+905330364402" class="btn btn-call">📞 Hemen Ara / Rezervasyon</a>
             <a href="https://www.instagram.com/lithosotelfoca" target="_blank" class="btn btn-insta">📸 Instagram Takip</a>
             <a href="#odalar" class="btn btn-suggest">💝 Odalarımızı İnceleyin</a>
         </div>
     </section>
 
-    <!-- HAKKIMIZDA -->
-    <section id="hakkimizda" class="section" style="text-align: center;">
-        <h2 class="section-title">Otel Tanıtımımız ve Memnuniyet Köşesi</h2>
-        <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
-            Lithos Otel, Eski Foça'nın tam merkezinde gürültüden uzak konumu, tarihi taş mimarisi, meşhur ev yapımı kahvaltısı ve aile işletmesi sıcaklığıyla misafirlerini ağırlamaktadır. Deniz, sahile ve limana yürüyerek sadece 1 dakika mesafedeyiz.
-        </p>
-    </section>
-
-    <!-- ÖZELLİKLER -->
+    <!-- ÖZELLİKLER (FOTOĞRAFDAN HEMEN SONRAKİ KISIM) -->
     <section id="ozellikler" class="section" style="background-color: #fdfdfd;">
         <h2 class="section-title">Özelliklerimiz</h2>
         <div class="grid">
@@ -81,7 +103,7 @@
             <div class="card" style="box-shadow: none; border: 1px solid #eee; width: 350px;">
                 <div class="card-content">
                     <h4>🍳 Ev Yapımı Kahvaltı</h4>
-                    <p>Bahçemizde sunduğumuz, tamamen yerel ürünler, ev yapımı reçeller ve sıcacık pişilerle güne harika başlayın.</p>
+                    <p>Bahçemizde sunduğumuz, tamamen yerel ürünler, ev yapımı reçeller and sıcacık pişilerle güne harika başlayın.</p>
                 </div>
             </div>
             <div class="card" style="box-shadow: none; border: 1px solid #eee; width: 350px;">
@@ -186,7 +208,7 @@
         </div>
     </section>
 
-    <!-- İLETİŞİM HARİTA (EN GÜVENLİ FORMATTA YENİLENDİ) -->
+    <!-- İLETİŞİM HARİTA -->
     <section id="iletisim" class="section" style="text-align: center;">
         <h2 class="section-title">Konumumuz</h2>
         <div style="width: 100%; max-width: 1150px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
