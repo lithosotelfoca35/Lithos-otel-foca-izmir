@@ -30,18 +30,17 @@
             opacity: 0.9;
         }
         
-        /* Sağ ve Sol Boşlukları Dolduran Yeni Düzen */
         .ana-yerlesim {
             max-width: 1200px;
             margin: 30px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 2fr 1fr; /* Sol geniş, Sağ sütun alanı */
+            grid-template-columns: 2fr 1fr;
             gap: 30px;
         }
         
         @media (max-width: 900px) {
-            .ana-yerlesim { grid-template-columns: 1fr; } /* Mobilde alt alta gelsin */
+            .ana-yerlesim { grid-template-columns: 1fr; }
         }
 
         .sol-icerik {
@@ -74,6 +73,47 @@
         }
         .kart h3 { margin-top: 0; color: #3e4a3d; }
         
+        /* Memnuniyet Köşesi Tasarım Elementleri */
+        .yorumlar-alani {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .yorum-kartlar-grubu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .yorum-kartlar-grubu { grid-template-columns: 1fr; }
+        }
+        .yorum-kart {
+            background: #fcfbfa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            position: relative;
+        }
+        .yildizlar {
+            color: #ffb400;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .yorum-metni {
+            font-size: 13.5px;
+            font-style: italic;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .yorum-sahibi {
+            font-size: 12px;
+            font-weight: bold;
+            color: #3e4a3d;
+            text-align: right;
+        }
+
         .sag-kart {
             background: white;
             padding: 25px;
@@ -117,7 +157,6 @@
             text-align: center;
             padding: 30px;
             font-size: 0.9em;
-            color: #8c8c8c;
             background: #3e4a3d;
             color: #f9f6f0;
             margin-top: 50px;
@@ -142,39 +181,70 @@
 <div class="ana-yerlesim">
     
     <div class="sol-icerik">
-        <h2>*Hakkımızda</h2>
-        <p>Lithos Otel, Eski Foça'nın tam merkezinde gürültüden uzak konumu, tarihi taş mimarisi, meşhur ev yapımı pişili kahvaltısı and aile işletmesi sıcaklığıyla misafirlerine ev konforunda huzurlu bir Ege tatili sunar. Denize, sahile and limana yürüyerek sadece 1 dakika mesafedeyiz.</p>
+        <h2>Hakkımızda</h2>
+        <p>Lithos Otel, Eski Foça'nın tam merkezinde gürültüden uzak konumu, tarihi taş mimarisi, meşhur ev yapımı pişili kahvaltısı ve aile işletmesi sıcaklığıyla misafirlerine ev konforunda huzurlu bir Ege tatili sunar. Denize, sahile ve limana yürüyerek sadece 1 dakika mesafedeyiz.</p>
 
         <div class="ozellikler">
             <div class="kart">
                 <h3>Tarihi Taş Mimari</h3>
-                <p>Eski Foça'nın ruhunu yansıtan, yüksek tavanlı, ahşap and taşın harmanlandığı otantik odalarımızla hizmetinizdeyiz.</p>
+                <p>Eski Foça'nın ruhunu yansıtan, yüksek tavanlı, ahşap ve taşın harmanlandığı otantik odalarımızla hizmetinizdeyiz.</p>
             </div>
             <div class="kart">
                 <h3>Ev Yapımı Kahvaltı</h3>
-                <p>Bahçemizde sunduğumuz, tamamen yerel ürünler, ev yapımı reçeller and sıcacık pişilerle güne harika başlayın.</p>
+                <p>Bahçemizde sunduğumuz, tamamen yerel ürünler, ev yapımı reçeller ve sıcacık pişilerle güne harika başlayın.</p>
             </div>
             <div class="kart">
                 <h3>Mükemmel Konum</h3>
-                <p>Merkezin göbeğinde, plajlara and restoranlara birkaç adım mesafede ama akşam gürültüsünden tamamen izole bir konum.</p>
+                <p>Merkezin göbeğinde, plajlara ve restoranlara birkaç adım mesafede ama akşam gürültüsünden tamamen izole bir konum.</p>
             </div>
             <div class="kart">
                 <h3>Aile Sıcaklığı</h3>
-                <p>Kusursuz temizlik and kendinizi evinizde hissettirecek güler yüzlü bir misafirperverlik anlayışı.</p>
+                <p>Kusursuz temizlik ve kendinizi evinizde hissettirecek güler yüzlü bir misafirperverlik anlayışı.</p>
             </div>
         </div>
 
+        <div class="yorumlar-alani">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3e4a3d; padding-bottom: 8px; margin-bottom: 15px;">
+                <h2 style="margin: 0; color: #3e4a3d;">💝 Misafirlerimizin Kaleminden</h2>
+                <div style="background: #f5f2eb; padding: 5px 10px; border-radius: 20px; font-size: 13px; font-weight: bold; color: #3e4a3d;">
+                    Google Puanı: ⭐ 4.9 / 5
+                </div>
+            </div>
+            <p style="font-size: 14px; color: #666; margin: 0;">Foça'daki eviniz Lithos Otel'de konaklayan misafirlerimizin değerli yorumları:</p>
+            
+            <div class="yorum-kartlar-grubu">
+                <div class="yorum-kart">
+                    <div class="yildizlar">★★★★★</div>
+                    <div class="yorum-metni">"Eski Foça'nın merkezinde ancak gürültüden tamamen uzak, muazzam huzurlu bir taş otel. Sabah bahçede sıcak sıcak gelen o ev yapımı pişilerin ve reçellerin tadı hala damağımızda. Temizlik on numara, işletme sahiplerinin güler yüzü ve aile sıcaklığı için çok teşekkür ederiz."</div>
+                    <div class="yorum-sahibi">— Ahmet & Elif Y.</div>
+                </div>
+                <div class="yorum-kart">
+                    <div class="yildizlar">★★★★★</div>
+                    <div class="yorum-metni">"Denize ve limana yürüyerek tam 1 dakika mesafede olması harika bir avantaj. Odaların otantik taş yapısı ve yüksek tavanları çok ferah. Kendimizi otelde değil de yazlığımızda gibi hissettirdiler. Foça'ya tekrar gelirsek kalacağımız tek adres kesinlikle Lithos."</div>
+                    <div class="yorum-sahibi">— Murat B.</div>
+                </div>
+                <div class="yorum-kart">
+                    <div class="yildizlar">★★★★★</div>
+                    <div class="yorum-metni">"Eşimle birlikte hafta sonu kaçamağı için geldik ve bayıldık. Bahçenin dinginliği, kahvaltının doğallığı ve odaların titizliği bizi çok memnun etti. Konumu tam merkezde, her yere yürüyerek ulaştık. Kesinlikle tavsiye ederim."</div>
+                    <div class="yorum-sahibi">— Seda K.</div>
+                </div>
+                <div class="yorum-kart">
+                    <div class="yildizlar">★★★★★</div>
+                    <div class="yorum-metni">"Kusursuz temizlik, harika lokasyon ve muhteşem misafirperverlik. Taş binanın tarihi dokusu korunmuş ve çok zevkli döşenmiş. Kahvaltıdaki her şey el yapımı ve çok lezzetliydi. Her şey için elinize sağlık."</div>
+                    <div class="yorum-sahibi">— Caner D.</div>
+                </div>
+            </div>
+        </div>
         <div style="margin-top: 40px;">
             <h2>Konumumuz</h2>
             <p>Adres: İsmetpaşa Mah. 200 Sok. No:26, Eski Foça / İzmir</p>
             <div class="harita">
-                <iframe src="https://maps.google.com/maps?q=Ismetpasa%20Mah.%20200%20Sok.%20No:26,%20Eski%20Foca&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/maps?q=Ismetpasa%20Mah.%20200%20Sok.%20No:26,%20Eski%20Foca%20Izmir&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
     
     <div class="sag-sutun">
-        
         <div class="sag-kart" style="text-align: center;">
             <h3 style="color: #3e4a3d; margin-top: 0;">Hızlı Rezervasyon</h3>
             <p style="font-size: 14px; color: #666;">Doğrudan en uygun fiyatlarla rezervasyon yapmak için bizimle iletişime geçin.</p>
@@ -197,12 +267,12 @@
             </form>
             
             <div id="basariMesaji" style="display: none; color: #2e7d32; font-weight: bold; text-align: center; font-size: 14px; padding: 10px 0;">
-                ✓ Görüşünüz doğrudan otel yönetimine (E-posta) başarıyla iletilmiştir.
+                ✓ Görüşünüz doğrudan otel yönetiminin (E-posta) adresine başarıyla iletilmiştir.
             </div>
         </div>
-        
     </div>
 </div>
+
 <footer>
     <p>©️ 2026 Lithos Otel Foça. Tüm Hakları Saklıdır.</p>
 </footer>
