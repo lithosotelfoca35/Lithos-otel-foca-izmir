@@ -147,11 +147,14 @@
 </div>
 
 <footer>
+    <p>©️ 2026 Lithos Otel Foça. Tüm Hakları Saklıdır.</p>
+</footer>
+
 <div class="gorus-kutusu" style="max-width: 500px; margin: 50px auto; padding: 30px; background: #fdfbf7; border: 2px solid #3e4a3d; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; font-family: sans-serif;">
     
     <h3 style="color: #3e4a3d; margin-bottom: 10px; font-size: 22px; font-weight: bold;">Görüş, Öneri ve Şikayetleriniz</h3>
     <p style="font-size: 13px; color: #666; margin-bottom: 25px; line-height: 1.5;">
-        Lithos Otel personeli ve yönetimi haricinde hiçbir üçüncü şahıs bu mesajları göremez. Görüşleriniz doğrudan yönetime şifreli ve güvenli olarak iletilmektedir.
+        Lithos Otel personeli ve yönetimi haricinde hiçbir üçüncü şahıs bu mesajları göreamaz. Görüşleriniz doğrudan yönetime güvenli olarak iletilmektedir.
     </p>
     
     <form id="yerelDilekFormu">
@@ -183,14 +186,12 @@
 </div>
 
 <script>
-    // GİRİŞ BİLGİLERİNİZ (Buradan değiştirebilirsiniz)
     const ADMIN_USER = "admin";
     const ADMIN_PASS = "Lithos2026";
 
     const form = document.getElementById('yerelDilekFormu');
     const basari = document.getElementById('yerelBasari');
 
-    // Ziyaretçinin mesaj gönderme fonksiyonu
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -206,12 +207,10 @@
         form.style.display = 'none';
         basari.style.display = 'block';
         
-        // Form alanlarını temizle
         document.getElementById('gorusAdSoyad').value = "";
         document.getElementById('gorusMesaj').value = "";
     });
 
-    // Yönetim Giriş Fonksiyonu
     function yonetimGirisYap() {
         const girilenUser = document.getElementById('panelKullanici').value;
         const girilenPass = document.getElementById('panelSifre').value;
@@ -226,7 +225,6 @@
             if (mevcutYorumlar.length === 0) {
                 liste.innerHTML = "<p style='color:#999; text-align:center;'>Henüz iletilmiş bir görüş bulunmuyor.</p>";
             } else {
-                // En son gelen mesaj en üstte görünsün diye listeyi ters çeviriyoruz
                 mevcutYorumlar.slice().reverse().forEach(function(item) {
                     liste.innerHTML += `
                         <div style="border-bottom: 1px solid #eee; padding: 10px 0; margin-bottom: 5px;">
@@ -239,21 +237,17 @@
             }
             
             alan.style.display = 'block';
-            // Giriş alanlarını temizle
             document.getElementById('panelKullanici').value = "";
             document.getElementById('panelSifre').value = "";
-            alert("Yönetici girişi başarılı. Görüşler aşağıda listelendi.");
-            
-            // Görüşler alanına otomatik kaydırır
+            alert("Yönetici girişi başarılı.");
             alan.scrollIntoView({ behavior: 'smooth' });
         } else {
-            alert("Hatalı Kullanıcı Adı veya Şifre! Erişim Reddedildi.");
+            alert("Hatalı Kullanıcı Adı veya Şifre!");
         }
     }
 
-    // Mesajları Tamamen Silme Fonksiyonu
     function verileriTemizle() {
-        if (confirm("Gelen tüm mesajları kalıcı olarak silmek istediğinize emin miydiniz? Bu işlem geri alınamaz.")) {
+        if (confirm("Gelen tüm mesajları kalıcı olarak silmek istediğinize emin misiniz?")) {
             localStorage.removeItem('otelGorusleri');
             document.getElementById('gizliYorumlarAlani').style.display = 'none';
             alert("Tüm veritabanı temizlendi.");
